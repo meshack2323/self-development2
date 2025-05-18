@@ -1,0 +1,103 @@
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #1e88e5;
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 2em;
+}
+
+section {
+  margin-bottom: 3em;
+}
+
+h2 {
+  color: #1e88e5;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5em;
+  margin: 1em 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 1em;
+  color: #1e88e5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+form button {
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  padding: 0.75em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
