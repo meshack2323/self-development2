@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MHS Self-Development Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>MHS Self-Development Hub</h1>
+    <nav>
+      <ul>
+        <li><a href="#ebooks">eBooks</a></li>
+        <li><a href="#podcasts">Podcasts</a></li>
+        <li><a href="contact.html">contact</a></li>
+		<li><a href="bookshop.html">bookshop</a></li>
+		<li><a href="order.html">place order</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="ebooks">
+      <h2>eBooks</h2>
+      <div class="card">
+        <h3>The art of seduction(Roert Greene)</h3>
+        <p>Learn how to seduce and protect yourself from being manipulated.</p>
+        <a href="ebooks/the_art_of_seduction.pdf" download>Download PDF</a>
+		<br>
+		<br>
+		<br>
+		<h3>The Way of The superior Man</h3>
+        <p>Learn how to be your ownself.</p>
+		
+		<br>
+        <a href="ebooks/the_way_superior_man.pdf" download>Download PDF</a>
+      </div>
+    </section>
+
+    <section id="podcasts">
+      <h2>Podcasts</h2>
+      <div class="card">
+        <h3>Episode 1: Don't be a nice guy</h3>
+        <audio controls>
+          <source src="podcasts/jordan.mp3" type="audio/mpeg" />
+		  your browser does not support the audio element.
+		</audio>
+		<br>
+		<a href="podcasts/jordan.mp3" download>📥 Download Episode</a>
+
+		<h4>episode 2: Never stop fighting</h4>
+		<audio controls>
+		  <source src="podcasts/david.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+		<br>
+		<a href="podcasts/david.mp3" download>📥 Download Episode</a>
+		
+		<h4>episode 3: Keys to mastery</h4>
+		<audio controls>
+		  <source src="podcasts/robert.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+		<br>
+		<a href="podcasts/robert.mp3" download>📥 Download Episode</a>
+		
+		
+		<br>
+		<h4>Contribute to community: Upload your resource</h4>
+		<br>
+		<a href="https://docs.google.com/forms/d/e/1FAIpQLSfhZ3eTSOswNgvxdFkUQU0eg11hRbMwYdn9gKxKnAdJ3Y--iw/viewform?usp=dialog" target="_blank">
+          <button>📤 Submit Your Content</button>
+        </a><br><b>
+
+        <h2>YouTube Motivation Search</h2>
+        <form id="youtube-search-form">
+          <input type="text" id="youtube-search-input" placeholder="Search for motivational videos..." required>
+          <button type="submit">Search</button>
+        </form>
+        <div id="youtube-results"></div>
+
+        <!-- Link your script -->
+        <script src="youtube.js"></script>
+
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Meshack Self-Development Hub. All rights reserved.</p>
+  </footer>
+  <script src="youtube.js"></script>
+</body>
+</html>
