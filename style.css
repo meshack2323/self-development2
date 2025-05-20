@@ -18,6 +18,17 @@ body {
   background-repeat: no-repeat;
   color: white; /* Ensure text stays readable */
 }
+
+.book img {
+  width: 100%;             /* Stretches to the card width */
+  max-width: 200px;        /* Prevents overly wide images */
+  height: auto;            /* Keeps aspect ratio */
+  max-height: 280px;       /* Limits tall images */
+  object-fit: cover;       /* Ensures cropping instead of distortion */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
 #youtube-search-form {
   margin-top: 20px;
   display: flex;
