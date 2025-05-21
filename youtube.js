@@ -14,18 +14,30 @@ searchForm.addEventListener("submit", function (e) {
   }
 });
 
-function searchYouTube(query) {
-  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=5&q=${encodeURIComponent(query)}&key=${API_KEY}`;
+function searchYouTube() {
+  const query = document.getElementById("youtubeSearch").value;
+  const apiKey = 'AIzaSyBU2hW3Cv10f-8fh0y2VptbNSM9PvvHmkY'; // replace with your key
+  const maxResults = 5;
 
-  fetch(url)
+  fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${apiKey}&maxResults=${maxResults}&type=video`)
     .then(response => response.json())
     .then(data => {
-      displayResults(data.items);
+      const resultsDiv = document.getElementById("videoResults");
+      resultsDiv.innerHTML = "";
+
+      data.items.forEach(item => {
+        const videoId = item.id.videoId;
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        iframe.width = "100%";
+        iframe.height = "315";
+        iframe.frameBorder = "0";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        resultsDiv.appendChild(iframe);
+      });
     })
-    .catch(error => {
-      console.error("YouTube API error:", error);
-      resultsContainer.innerHTML = "<p>Failed to fetch results. Check your API key or connection.</p>";
-    });
+    .catch(error => console.error("YouTube API error:", error));
 }
 
 function displayResults(videos) {
