@@ -16,7 +16,7 @@ searchForm.addEventListener("submit", function (e) {
 
 function searchYouTube() {
   const query = document.getElementById("youtubeSearch").value;
-  const apiKey = 'AIzaSyBU2hW3Cv10f-8fh0y2VptbNSM9PvvHmkY'; // replace with your key
+  const apiKey = "AIzaSyBU2hW3Cv10f-8fh0y2VptbNSM9PvvHmkY";
   const maxResults = 5;
 
   fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${apiKey}&maxResults=${maxResults}&type=video`)
