@@ -10,12 +10,39 @@
   
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script>
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+
+      document.getElementById('location').value = `Lat: ${lat}, Lon: ${lon}`;
+
+      const map = L.map('map').setView([lat, lon], 13);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      L.marker([lat, lon]).addTo(map)
+        .bindPopup('You are here.')
+        .openPopup();
+    }, function (err) {
+      document.getElementById('map').innerText = 'Location access denied.';
+    });
+  } else {
+    document.getElementById('map').innerText = 'Geolocation not supported.';
+  }
+  </script>
+  
   <style>
     #map {
       height: 300px;
       width: 100%;
       margin-top: 20px;
       border-radius: 10px;
+      background:white;
     }
   </style>
 
