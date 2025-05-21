@@ -74,16 +74,22 @@
         </a><br><b>
 
         <h2>YouTube Motivation Search</h2>
-        <form id="youtube-search-form">
-          <input type="text" id="youtube-search-input" placeholder="Search for motivational videos..." required>
-          <button type="submit">Search</button>
-        </form>
-        <div id="youtube-results"></div>
-
-        <!-- Link your script -->
-        <script src="youtube.js"></script>
-
-
+		
+        <select id="youtubeSearch" onchange="searchYouTube()">
+          <option disabled selected>Choose a motivation topic</option>
+          <option value="morning motivation">Morning Motivation</option>
+          <option value="success stories">Success Stories</option>
+          <option value="overcoming failure">Overcoming Failure</option>
+          <option value="discipline and habits">Discipline and Habits</option>
+          <option value="motivational speeches 2024">Motivational Speeches 2024</option>
+          <option value="how to master and change your habits">how to Master and change your habits</option>
+          <option value="use your time well motivation">use your time well</option>
+          <option value="be yourself motivation">be yourself</option>
+          <option value="face your fears">face your fears</option>
+          <option value="motivational speeches from 2019 to 2024">Motivational Speeches from 2019 to 2024</option>
+	</select>
+        <div id="videoResults"></div>
+	<script src="youtube.js></script>	
       </div>
     </section>
   </main>
@@ -91,6 +97,5 @@
   <footer>
     <p>&copy; 2025 Meshack Self-Development Hub. All rights reserved.</p>
   </footer>
-  <script src="youtube.js"></script>
 </body>
 </html>
