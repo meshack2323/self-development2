@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,78 +7,28 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>MHS Self-Development Hub</h1>
-    <nav>
-      <ul>
-        <li><a href="#ebooks">eBooks</a></li>
-        <li><a href="#podcasts">Podcasts</a></li>
-        <li><a href="contact.html">contact</a></li>
-        <li><a href="bookshop.html">bookshop</a></li>
-	<li><a href="order.html">place order</a></li>
-      </ul>
-    </nav>
-  </header>
+ <header class="hero">
+  <div class="hero-text">
+    <h1>Welcome to Self Development Hub</h1>
+    <p>Grow Your Mindset. Transform Your Life.</p>
+    <div class="hero-buttons">
+      <a href="bookshop.html" class="btn">Visit Bookshop</a>
+      <a href="ebooks.html" class="btn">E-Books</a>
+      <a href="podcasts.html" class="btn">Podcasts</a>
+      <a href="contribute.html" class="btn">share Resources</a>
+	  <a href="contact.html" class="btn">contact us<a>
+    </div>
+  </div>
+</header>
+    
   <main>
-    <section id="ebooks">
-      <h2>eBooks</h2>
-      <div class="card">
-        <h3>The art of seduction(Roert Greene)</h3>
-        <p>Learn how to seduce and protect yourself from being manipulated.</p>
-        <a href="ebooks/the_art_of_seduction.pdf" download>Download PDF</a>
-		<br>
-		<br>
-		<br>
-	<h3>The Way of The superior Man</h3>
-        <p>Learn how to be your ownself.</p>
-		
-		<br>
-        <a href="ebooks/the_way_superior_man.pdf" download>Download PDF</a>
-      </div>
-    </section>
-
-    <section id="podcasts">
-      <h2>Podcasts</h2>
-      <div class="card">
-        <h3>Episode 1: Don't be a nice guy</h3>
-        <audio controls>
-          <source src="podcasts/jordan.mp3" type="audio/mpeg" />
-	  your browser does not support the audio element.
-	</audio>
-	<br>
-	<a href="podcasts/jordan.mp3" download>📥 Download Episode</a>
-
-	<h4>episode 2: Never stop fighting</h4>
-	<audio controls>
-	<source src="podcasts/david.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
-		<br>
-		<a href="podcasts/david.mp3" download>📥 Download Episode</a>
-		
-		<h4>episode 3: Keys to mastery</h4>
-		<audio controls>
-		  <source src="podcasts/robert.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
-		<br>
-		<a href="podcasts/robert.mp3" download>📥 Download Episode</a>
-		
-		
-		<br>
-		<h4>Contribute to community: Upload your resource</h4>
-		<br>
-		<a href="https://docs.google.com/forms/d/e/1FAIpQLSfhZ3eTSOswNgvxdFkUQU0eg11hRbMwYdn9gKxKnAdJ3Y--iw/viewform?usp=dialog" target="_blank">
-          <button>📤 Submit Your Content</button>
-        </a><br><b>
-
-        <h2>YouTube Motivation Search</h2>
-		
+  <section id="youtube-search">
+  <h2>YouTube Motivation Search</h2>
         <select id="youtubeSearch" onchange="searchYouTube()">
           <option disabled selected>Choose a motivation topic</option>
           <option value="morning motivation">Morning Motivation</option>
-          <option value="success stories mitivation">Success Stories</option>
-          <option value="overcoming failure motivation">Overcoming Failure</option>
+          <option value="success stories of billionaires motivation">Success Stories</option>
+          <option value="overcoming failure Motivation">Overcoming Failure</option>
           <option value="discipline and habits motivation">Discipline and Habits</option>
           <option value="motivational speeches 2024">Motivational Speeches 2024</option>
           <option value="how to master and change your habits motivation">how to Master and change your habits</option>
@@ -87,10 +36,13 @@
           <option value="be yourself motivation">be yourself</option>
           <option value="face your fears motivation">face your fears</option>
           <option value="motivational speeches from 2019 to 2024">Motivational Speeches from 2019 to 2024</option>
-	</select>
+		  
+        </select>
+		
+
         <div id="videoResults"></div>
-	<script src="youtube.js"></script>	
-      </div>
+
+        <script src="youtube.js"></script>
     </section>
   </main>
 
