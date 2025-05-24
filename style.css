@@ -610,3 +610,45 @@ footer {
   background-color: #ffaa33;
 }
 
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --highlight-color: #ff9900;
+  --btn-bg: #ff9900;
+  --btn-text: #000000;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.site-title span {
+  color: var(--highlight-color);
+}
+
+/* Dark theme override */
+body.dark {
+  --bg-color: #0d0d0d;
+  --text-color: #ffffff;
+  --btn-bg: #ffaa33;
+  --btn-text: #111111;
+}
+
+.theme-toggle {
+  text-align: right;
+  padding: 10px 20px;
+}
+
+#themeButton {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
