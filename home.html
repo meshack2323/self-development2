@@ -9,7 +9,7 @@
 <body>
  <header class="hero">
   <div class="hero-text">
-    <h1>Welcome to Self Development Hub</h1>
+    <h1>Let's start the adventure</h1>
     <p>Grow Your Mindset. Transform Your Life.</p>
     <div class="hero-buttons">
       <a href="bookshop.html" class="btn">Visit Bookshop</a>
@@ -52,28 +52,6 @@
   </footer>
 </body>
 
-<div class="theme-toggle">
-  <button id="themeButton" onclick="toggleTheme()">🌙 Toggle Theme</button>
-</div>
 
-<script>
-  function toggleTheme() {
-    document.body.classList.toggle("dark");
-    // Save theme in localStorage
-    if (document.body.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
-    }
-  }
-
-  // Load saved theme on page load
-  window.onload = () => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark");
-    }
-  };
-</script>
 		  
 </html>
