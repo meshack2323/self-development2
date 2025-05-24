@@ -371,3 +371,40 @@ h1 {
     transform: translateY(4px); 
   }
 }
+
+.typewriter, #typewriter-text, #quote-box {
+  white-space: normal;      /* ✅ Allow wrapping */
+  word-break: break-word;   /* ✅ Prevent overflow */
+  max-width: 90vw;          /* ✅ Limit width on phones */
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .typewriter {
+    font-size: 1.1rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  .feature {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+  }
+
+  .enter-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
