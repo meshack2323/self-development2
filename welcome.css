@@ -408,3 +408,9 @@ h1 {
     padding: 10px 20px;
   }
 }
+.logo-tag {
+  color: #ff9900;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
