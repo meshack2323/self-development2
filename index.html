@@ -2,52 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MHS Self-Development Hub</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Welcome | Self-Development Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="welcome.css">
 </head>
-<body>
- <header class="hero">
-  <div class="hero-text">
-    <h1>Welcome to Self Development Hub</h1>
-    <p>Grow Your Mindset. Transform Your Life.</p>
-    <div class="hero-buttons">
-      <a href="bookshop.html" class="btn">Visit Bookshop</a>
-      <a href="ebooks.html" class="btn">E-Books</a>
-      <a href="podcasts.html" class="btn">Podcasts</a>
-      <a href="contribute.html" class="btn">share Resources</a>
-	  <a href="contact.html" class="btn">contact us<a>
-    </div>
+<body class="welcome">
+
+  <div class="welcome-box">
+    <h1 class="fade-in">Welcome to <span style="color: #ff9900;">Self-Development Hub</span></h1>
+<p class="typewriter" id="typewriter-text"></p>
+<p class="typewriter" id="quote-box"></p>
+<a href="#about-section" class="scroll-down">
+  <i class="fas fa-chevron-down"></i>
+</a>
+
+<!-- New About + Services Section -->
+<div class="about-section fade-in delay-4" id="about-section">
+  <h2>What We Offer</h2>
+  <p>
+    Self-Development Hub is your personal space for growth, purpose, and success. Whether you're building discipline, seeking inspiration, or looking to connect with empowering tools — you're in the right place.
+  </p>
+
+  <div class="features">
+    <div class="feature animated-feature delay-f1"><i class="fas fa-book-open"></i> Motivational eBooks</div>
+    <div class="feature animated-feature delay-f2"><i class="fas fa-podcast"></i> Inspiring Podcasts</div>
+    <div class="feature animated-feature delay-f3"><i class="fas fa-robot"></i> AI Motivation Assistant</div>
+    <div class="feature animated-feature delay-f4"><i class="fas fa-store"></i> Bookshop with Delivery</div>
+    <div class="feature animated-feature delay-f5"><i class="fas fa-users"></i> Contribute to the Community</div>
   </div>
-</header>
-    
-  <main>
-  <section id="youtube-search">
-  <h2>YouTube Motivation Search</h2>
-        <select id="youtubeSearch" onchange="searchYouTube()">
-          <option disabled selected>Choose a motivation topic</option>
-          <option value="morning motivation">Morning Motivation</option>
-          <option value="success stories of billionaires motivation">Success Stories</option>
-          <option value="overcoming failure Motivation">Overcoming Failure</option>
-          <option value="discipline and habits motivation">Discipline and Habits</option>
-          <option value="motivational speeches 2024">Motivational Speeches 2024</option>
-          <option value="how to master and change your habits motivation">how to Master and change your habits</option>
-          <option value="use your time well motivation">use your time well</option>
-          <option value="be yourself motivation">be yourself</option>
-          <option value="face your fears motivation">face your fears</option>
-          <option value="motivational speeches from 2019 to 2024">Motivational Speeches from 2019 to 2024</option>
-		  
-        </select>
-		
+<a href="home.html" class="enter-btn fade-in delay-5">continue</a>
+  
+</div>
 
-        <div id="videoResults"></div>
+  </div>
 
-        <script src="youtube.js"></script>
-    </section>
-  </main>
+  <script>
+    const introText = "Your journey to personal growth, purpose, and power begins here.";
+    const quotes = [
+      "The journey of a thousand miles begins with a single step. – Lao Tzu",
+      "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+      "You don’t have to be great to start, but you have to start to be great. – Zig Ziglar"
+    ];
 
-  <footer>
-    <p>&copy; 2025 Meshack Self-Development Hub. All rights reserved.</p>
-  </footer>
+    const speed = 50;
+    let i = 0, q = 0;
+
+    function typeWriterIntro() {
+      if (i < introText.length) {
+        document.getElementById("typewriter-text").innerHTML += introText.charAt(i);
+        i++;
+        setTimeout(typeWriterIntro, speed);
+      } else {
+        setTimeout(typeWriterQuote, 1000);
+      }
+    }
+
+    function typeWriterQuote() {
+      const quoteBox = document.getElementById("quote-box");
+      const quote = quotes[q];
+      let j = 0;
+      quoteBox.innerHTML = "";
+
+      function type() {
+        if (j < quote.length) {
+          quoteBox.innerHTML += quote.charAt(j);
+          j++;
+          setTimeout(type, speed);
+        } else {
+          q = (q + 1) % quotes.length;
+          setTimeout(typeWriterQuote, 4000);
+        }
+      }
+
+      type();
+    }
+
+    window.onload = typeWriterIntro;
+  </script>
+
 </body>
 </html>
