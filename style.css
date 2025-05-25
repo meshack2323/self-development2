@@ -781,3 +781,10 @@ footer {
   white-space: nowrap;
 }
 
+@media screen and (max-width: 768px) {
+  h1,
+  .site-title {
+    font-size: 1.6rem;
+    padding: 0 10px;
+  }
+}
