@@ -735,3 +735,17 @@ footer {
 .return-btn:hover {
   background-color: #ff4444;
 }
+
+.logo-image {
+  width: auto;
+  height: 80px;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  animation: fadeIn 1s ease forwards;
+}
+
+@media screen and (max-width: 600px) {
+  .logo-image {
+    height: 60px;
+  }
+}
