@@ -579,6 +579,8 @@ footer {
 }
 
 
+
+
 .button-row {
   display: flex;
   overflow-x: auto;
@@ -608,4 +610,128 @@ footer {
 
 .button-row .btn:hover {
   background-color: #ffaa33;
+}
+.ebook-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.ebook-card {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  width: 250px;
+  box-shadow: 0 0 10px #000;
+  text-align: center;
+}
+
+.ebook-card h3 {
+  color: #ff9900;
+}
+
+.ebook-card button {
+  background: #ff9900;
+  border: none;
+  padding: 8px 14px;
+  margin-top: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ebook-card button:hover {
+  background: #ffaa33;
+}
+
+.status-text {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.ebook-card select {
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+  margin-top: 5px;
+}
+
+
+.ebook-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.ebook-card {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  width: 280px;
+  box-shadow: 0 0 10px #000;
+  text-align: center;
+}
+
+.ebook-card h3 {
+  color: #ff9900;
+}
+
+.ebook-card button {
+  background: #ff9900;
+  border: none;
+  padding: 8px 14px;
+  margin-top: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ebook-card button:hover {
+  background: #ffaa33;
+}
+
+.ebook-card select {
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+  margin-top: 5px;
+}
+
+.status-text {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.pdf-reader iframe {
+  border: none;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.timer-text {
+  font-size: 0.85rem;
+  color: #00cc66;
+  margin-top: 5px;
+}
+
+.return-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #cc3300;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.return-btn:hover {
+  background-color: #ff4444;
 }
