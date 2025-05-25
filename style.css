@@ -1,5 +1,13 @@
 /* style.css */
 
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden; /* ✅ Prevent sideways scroll */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -55,6 +63,17 @@ body {
   max-width: 600px;
   margin: 0 auto;
   font-size: 1.1rem;
+}
+
+h1,
+.site-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 20px auto;
+  padding: 0 10px;
+  max-width: 90vw;
+  white-space: normal;
+  word-break: break-word;
 }
 
 
