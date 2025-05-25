@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Borrow eBooks | Self-Development Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Borrow an eBook</h1>
+    
+    <div class="ebook-list">
+
+      <!-- Atomic Habits -->
+      <div class="ebook-card">
+        <h3>Atomic Habits</h3>
+        <label for="atomic-habits-days">Select period:</label>
+        <select id="atomic-habits-days">
+          <option value="3">3 days</option>
+          <option value="7" selected>7 days</option>
+          <option value="14">14 days</option>
+        </select>
+        <br>
+
+        <button onclick="borrowEbook('atomic-habits')">Borrow</button>
+        <p id="atomic-habits-status" class="status-text"></p>
+		<p id="atomic-habits-timer" class="timer-text"></p>
+
+        <div id="atomic-habits-reader" class="pdf-reader" style="display: none;">
+         <iframe src="ebooks/atomic-habits.pdf#toolbar=0" width="100%" height="500px"></iframe>
+        </div>
+		<button class="return-btn" onclick="returnEbook('atomic-habits')">Return Early</button>
+      </div>
+
+      <!-- Deep Work -->
+      <!-- The Psychology of Money -->
+<div class="ebook-card">
+  <h3>The Psychology of Money</h3>
+  <label for="psychology-money-days">Select period:</label>
+  <select id="psychology-money-days">
+    <option value="3">3 days</option>
+    <option value="7" selected>7 days</option>
+    <option value="14">14 days</option>
+  </select>
+  <br>
+  <button onclick="borrowEbook('psychology-money')">Borrow</button>
+  <p id="psychology-money-status" class="status-text"></p>
+  <p id="psychology-money-timer" class="timer-text"></p>
+  <div id="psychology-money-reader" class="pdf-reader" style="display: none;">
+    <iframe src="ebooks/the-psychology-of-money.pdf#toolbar=0" width="100%" height="500px"></iframe>
+  </div>
+  <button class="return-btn" onclick="returnEbook('psychology-money')">Return Early</button>
+</div>
+
+    </div>
+
+   </div>
+
+  <script>
+    function borrowEbook(bookId) {
+      const daysSelect = document.getElementById(`${bookId}-days`);
+      const days = parseInt(daysSelect.value);
+
+      const today = new Date();
+      const expiration = new Date();
+      expiration.setDate(today.getDate() + days);
+
+      localStorage.setItem(bookId, expiration.toISOString());
+
+      updateEbookStatus(bookId, expiration);
+    }
+
+    function updateEbookStatus(bookId, expiryDate) {
+      const today = new Date();
+      const expired = expiryDate < today;
+
+      const statusText = expired
+        ? "Borrow expired."
+        : "Borrowed. Due: " + expiryDate.toDateString();
+
+      document.getElementById(`${bookId}-status`).innerText = statusText;
+
+      // Show or hide the reader
+      document.getElementById(`${bookId}-reader`).style.display = expired ? "none" : "block";
+    }
+
+    window.onload = () => {
+      const books = ['atomic-habits', 'psychology-of-money'];
+      const today = new Date();
+
+      books.forEach(bookId => {
+        const expiry = localStorage.getItem(bookId);
+        if (expiry) {
+          const expiryDate = new Date(expiry);
+          updateEbookStatus(bookId, expiryDate);
+        }
+      });
+    };
+	
+	function startCountdown(bookId, expiryDate) {
+  const timerElement = document.getElementById(`${bookId}-timer`);
+
+  function updateCountdown() {
+    const now = new Date();
+    const timeDiff = expiryDate - now;
+
+    if (timeDiff <= 0) {
+      localStorage.removeItem(bookId);
+      document.getElementById(`${bookId}-reader`).style.display = "none";
+      document.getElementById(`${bookId}-status`).innerText = "Borrow expired.";
+      timerElement.innerText = "";
+      return;
+    }
+
+    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+    const seconds = Math.floor((timeDiff / 1000) % 60);
+
+    timerElement.innerText = `⏳ Time left: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    setTimeout(updateCountdown, 1000);
+  }
+
+  updateCountdown();
+}
+
+if (!expired) {
+  startCountdown(bookId, expiryDate);
+}
+
+
+function returnEbook(bookId) {
+  localStorage.removeItem(bookId);
+  document.getElementById(`${bookId}-reader`).style.display = "none";
+  document.getElementById(`${bookId}-status`).innerText = "You have returned the book.";
+  document.getElementById(`${bookId}-timer`).innerText = "";
+}
+
+</script>
+
+</body>
+</html>
